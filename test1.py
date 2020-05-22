@@ -30,6 +30,6 @@ print("<p>Input name: %s </p>" % website)
 print("<p>Input name: %s </p>" % cityname)
 print("<p>Input name: %s </p>" % postal)
 
-
+print("hello world")
 
 printFooter()
