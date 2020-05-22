@@ -3,7 +3,7 @@ import random
 import cgi
 import http.cookies as Cookie
 from Database import Database as db
-
+# tesssttt GİTTTT
 def printHeader(title):
     print("Content-type: text/html")
     print("")
