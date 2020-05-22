@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Company Login</title>
+        <style>
+        html{
+            text-align: center;
+            font-size: 25px;
+        }
+        button{
+            font-size : 20px;
+            background-color:cornflowerblue;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>Please fill all the areas</h1>
+        <form action = "login.py" method = "post">
+        Username: <input type="text" name="username" > <br>
+        Password: <input type="password" name="companypassword"> <br>
+
+        <button type = "button" onclick = "window.location.href='index.html'" > Back </button>
+        <button type = "submit"> Login </button>
+
+        </form>
+    </body>
+
+</html>
