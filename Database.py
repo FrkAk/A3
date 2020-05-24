@@ -7,6 +7,41 @@ class Database():
         self.conn = sqlite3.connect("database.db")
         self.name= "Database"
 
+    @staticmethod
+    def getinternshippositions():
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername")
+
+        internships = internshipdetail.fetchall()
+
+        conn.commit()
+        conn.close()
+        liste = []
+        if internships == []:
+            return liste
+        else:
+            for i in  internships:
+                liste.append(i)
+            return liste
+                
+
+        
+    @staticmethod
+    def countRow(tablename):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        allpositions = c.execute("SELECT * FROM %s" % tablename )
+
+        records = allpositions.fetchall()
+        count = len(records)
+
+        conn.commit()
+        conn.close()
+
+        return count    
     @staticmethod 
     def authenticationForCompany(account):
         conn = sqlite3.connect("database.db")
@@ -43,11 +78,13 @@ class Database():
         user = isUserExist.fetchone()
 
 
-        if user != []:
+        if user != None:
             return False
-
+        citycode = c.execute("SELECT citycode FROM CITY WHERE cityname = ?",(registrationDetails[6],))
+        city = citycode.fetchone()
+        registrationDetails[6] = city
         c.execute(
-            "INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, sessionid)VALUES(?,?,?,?,?,?,?,?)",
+            "INSERT INTO SOFTWARECOMPANY(username, pwd, companyname, email, telephone,website, address, sessionid,citycode)VALUES(?,?,?,?,?,?,?,?)",
             registrationDetails)
 
         conn.commit()
@@ -77,12 +114,13 @@ class Database():
         liste.extend(intershipDetails)
 
         c.execute(
-            "INSERT INTO INTERNSHIPPOSITION(id, internshipname, details, expetations,deadline)VALUES(?,?,?,?,?)",liste)
+            "INSERT INTO INTERNSHIPPOSITION(id, internshipname, details, expectations,deadline)VALUES(?,?,?,?,?)",liste)
 
         conn.commit()
         conn.close()
 
         return "Succesful"
+    
 
     @staticmethod
     def companyDetails(companyName):
@@ -153,8 +191,10 @@ class Database():
                      id INTEGER PRIMARY KEY,
                      internshipname TEXT NOT NULL,
                      details TEXT NOT NULL,
-                     expetations TEXT NOT NULL,
-                     deadline TEXT NOT NULL)""")
+                     expectations TEXT NOT NULL,
+                     deadline TEXT NOT NULL,
+                     companyusername TEXT NOT NULL,
+                     FOREIGN KEY (companyusername) REFERENCES SOTWARECOMPANY (username))""")
 
         cities = [(1, 'Gazimagusa'),
                   (2, 'Girne'),
@@ -165,14 +205,17 @@ class Database():
 
         companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.','123',1)]
 
+        intership = [(8,'kole','freekole', 'everythingbutlittlelittle','today','apple'),(7,'efde','freaewfsekole', 'asdf','todfday','apple')]
+
         c.executemany("INSERT INTO CITY(citycode, cityname)VALUES(?, ?)", cities)
         c.executemany("INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, sessionid, citycode)VALUES(?,?,?,?,?,?,?,?,?)",companies)
+        c.executemany("INSERT INTO INTERNSHIPPOSITION(id,internshipname, details, expectations, deadline, companyusername)VALUES(?,?,?,?,?,?)", intership)
 
         conn.commit()
         conn.close()
 
 
-listeintern = ["name","details","expetation","deadline"]
+listeintern = ["name","details","expectation","deadline"]
 listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
 account = ["username","password"]
 companyname = "Apple"
@@ -181,5 +224,7 @@ db = Database()
 #returnval = db.registerationForCompany(listecomany)
 #returnval = db.authenticationForCompany(account)
 #returnval = db.companyDetails(companyname)
+#returnval = db.countRow("SOFTWARECOMPANY")
+#returnval = db.getinternshippositions()
 #print(returnval)
 #db.databaseInitiation()

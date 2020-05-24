@@ -1,4 +1,6 @@
-#! C:\Users\Psikolojik\AppData\Local\Programs\Python\Python38-32\python.exe
+#! C:\Program Files (x86)\Python38-32\python
+import cgi
+from Database import Database as db
 
 
 #Testingggggg
