@@ -25,9 +25,28 @@ class Database():
             for i in  internships:
                 liste.append(i)
             return liste
-                
 
-        
+    @staticmethod
+    def getinternshippositionsforacompany(user):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        internshipdetail = c.execute(
+            " SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
+            "WHERE companyusername = ?",(user,))
+
+        internships = internshipdetail.fetchall()
+
+        conn.commit()
+        conn.close()
+        liste = []
+        if internships == []:
+            return liste
+        else:
+            for i in internships:
+                liste.append(i)
+            return liste
+
     @staticmethod
     def countRow(tablename):
         conn = sqlite3.connect("database.db")
@@ -53,13 +72,14 @@ class Database():
         ACCOUNT = c.execute("SELECT username,pwd FROM SOFTWARECOMPANY WHERE username = ? AND pwd = ?",
                              (keyUsername, keyPassword,))
         ID = ACCOUNT.fetchall()
+
         conn.commit()
         conn.close()
 
         if ID == []:
-            return False
+            return None
         else:
-            return True
+            return ID[0][0]
 
     @staticmethod
     def registerationForCompany(registrationDetails):
@@ -82,9 +102,9 @@ class Database():
             return False
         citycode = c.execute("SELECT citycode FROM CITY WHERE cityname = ?",(registrationDetails[6],))
         city = citycode.fetchone()
-        registrationDetails[6] = city
+        registrationDetails[6] = city[0]
         c.execute(
-            "INSERT INTO SOFTWARECOMPANY(username, pwd, companyname, email, telephone,website, address, sessionid,citycode)VALUES(?,?,?,?,?,?,?,?)",
+            "INSERT INTO SOFTWARECOMPANY(username, pwd, companyname, email, telephone,website, citycode, address, sessionid)VALUES(?,?,?,?,?,?,?,?,?)",
             registrationDetails)
 
         conn.commit()
@@ -114,7 +134,7 @@ class Database():
         liste.extend(intershipDetails)
 
         c.execute(
-            "INSERT INTO INTERNSHIPPOSITION(id, internshipname, details, expectations,deadline)VALUES(?,?,?,?,?)",liste)
+            "INSERT INTO INTERNSHIPPOSITION(id, internshipname, details, expectations,deadline,companyusername)VALUES(?,?,?,?,?,?)",liste)
 
         conn.commit()
         conn.close()
@@ -143,6 +163,28 @@ class Database():
 
         conn.commit()
         conn.close()
+
+
+
+
+    @staticmethod
+    def searchKeyWord(keyword):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+
+        internshipID =  c.execute("SELECT DISTINCT id FROM INTERNSHIPPOSITION "
+                                  "WHERE expectations LIKE ?")
+
+        IDs = internshipID.fetchall()
+
+        if IDs == []:
+            return False
+
+        return IDs
+
+
+
 
 
     @staticmethod
@@ -226,5 +268,6 @@ db = Database()
 #returnval = db.companyDetails(companyname)
 #returnval = db.countRow("SOFTWARECOMPANY")
 #returnval = db.getinternshippositions()
-#print(returnval)
+returnval = db.searchKeyWord("as")
+print(returnval)
 #db.databaseInitiation()
