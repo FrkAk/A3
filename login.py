@@ -5,8 +5,6 @@ import http.cookies as Cookie
 from Database import Database as db
 
 
-
-
 def post():
     htmlWrong = """
     <html>
@@ -50,9 +48,6 @@ def post():
 
 
 
-
-
-
 form = cgi.FieldStorage()
 name = form.getvalue("username")
 pwd = form.getvalue('companypassword')
@@ -62,10 +57,11 @@ liste.append(name)
 liste.append(pwd)
 
 htmlHeader = """
+Content-type: text/html
 <html>
     <head>
         <title>Internship</title>  
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="common.css">
     </head>
     <body>
 """
@@ -147,24 +143,15 @@ else:
 
 
 
-def printHeader(title):
-    print("Content-type: text/html")
-    print("")
-    print("".format(title))
 
 
-def printFooter():
-    print("</body></html>")
+
+def cookie():
 
 
-def printBody():
-    print("""
-		<h2>Post your Job after Sign in/up Form</h2>
-		""")
 
 
-def temp():
-    printHeader("Login")
+
 
     cookie = Cookie.SimpleCookie()
     cookie["session"] = random.randint(1, 1000000000)
@@ -176,5 +163,3 @@ def temp():
     # print("window.location = 'deneme.py';")
     print("</script>")
 
-    printBody()
-    printFooter()
