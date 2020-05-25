@@ -12,7 +12,9 @@ class Database():
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
 
-        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername")
+        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM "
+                                     "INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = "
+                                     "INTERNSHIPPOSITION.companyusername")
 
         internships = internshipdetail.fetchall()
 
@@ -32,7 +34,7 @@ class Database():
         c = conn.cursor()
 
         internshipdetail = c.execute(
-            " SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
+            "SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
             "WHERE companyusername = ?",(user,))
 
         internships = internshipdetail.fetchall()
@@ -174,7 +176,7 @@ class Database():
 
 
         internshipID =  c.execute("SELECT DISTINCT id FROM INTERNSHIPPOSITION "
-                                  "WHERE expectations LIKE ?")
+                                  "WHERE expectations LIKE ?",(keyword,))
 
         IDs = internshipID.fetchall()
 
@@ -182,10 +184,6 @@ class Database():
             return False
 
         return IDs
-
-
-
-
 
     @staticmethod
     def checkDatabesExistance():
@@ -236,7 +234,7 @@ class Database():
                      expectations TEXT NOT NULL,
                      deadline TEXT NOT NULL,
                      companyusername TEXT NOT NULL,
-                     FOREIGN KEY (companyusername) REFERENCES SOTWARECOMPANY (username))""")
+                     FOREIGN KEY (companyusername) REFERENCES SOFTWARECOMPANY (username))""")
 
         cities = [(1, 'Gazimagusa'),
                   (2, 'Girne'),
@@ -268,6 +266,6 @@ db = Database()
 #returnval = db.companyDetails(companyname)
 #returnval = db.countRow("SOFTWARECOMPANY")
 #returnval = db.getinternshippositions()
-returnval = db.searchKeyWord("as")
-print(returnval)
+#returnval = db.searchKeyWord("as")
+#print(returnval)
 #db.databaseInitiation()

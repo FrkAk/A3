@@ -26,9 +26,9 @@ htmltable ="""
         <h1>Welcome to Northern Cyprus Internship Website</h1>
         <p>Please Select what you want to do</p>       
         <form method = "post">
-        <input type="text" placeholder="Search" name="search"/>
-        <button type = "submit" id = "search" > Search </button> <br> <br>
-        <button type = "button" onclick = "window.location.href='signInUpPage.py'" > Sign In/Sign Up </button>
+            <input type="text" placeholder="Search" name="search"/>
+            <button type = "submit" id = "search" > Search </button> <br> <br>
+            <button type = "button" onclick = "window.location.href='signInUpPage.py'" > Sign In/Sign Up </button>
         </form>
         
                 
