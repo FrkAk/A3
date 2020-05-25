@@ -12,7 +12,9 @@ class Database():
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
 
-        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername")
+        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM "
+                                     "INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = "
+                                     "INTERNSHIPPOSITION.companyusername")
 
         internships = internshipdetail.fetchall()
 
@@ -32,7 +34,7 @@ class Database():
         c = conn.cursor()
 
         internshipdetail = c.execute(
-            " SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
+            "SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
             "WHERE companyusername = ?",(user,))
 
         internships = internshipdetail.fetchall()
@@ -183,9 +185,9 @@ class Database():
 
         return IDs
 
+
         conn.commit()
         conn.close()
-
     @staticmethod
     def checkDatabesExistance():
         conn = sqlite3.connect('database.db')
@@ -235,7 +237,7 @@ class Database():
                      expectations TEXT NOT NULL,
                      deadline TEXT NOT NULL,
                      companyusername TEXT NOT NULL,
-                     FOREIGN KEY (companyusername) REFERENCES SOTWARECOMPANY (username))""")
+                     FOREIGN KEY (companyusername) REFERENCES SOFTWARECOMPANY (username))""")
 
         cities = [(1, 'Gazimagusa'),
                   (2, 'Girne'),
