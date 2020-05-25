@@ -244,7 +244,7 @@ class Database():
                   (3, 'Guzelyurt'),
                   (4, 'Iskele'),
                   (5, 'Lefke'),
-                  (6, 'Lefkoşa')]
+                  (6, 'Lefkosa')]
 
         companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.','123',1)]
 
@@ -258,7 +258,7 @@ class Database():
         conn.close()
 
 
-listeintern = ["name","details","expectation","deadline"]
+listeintern = ["googleintern","Summer Intern","Fulltime Internship","02/08/2020","google"]
 listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
 account = ["username","password"]
 companyname = "Apple"
