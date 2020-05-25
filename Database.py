@@ -185,6 +185,9 @@ class Database():
 
         return IDs
 
+
+        conn.commit()
+        conn.close()
     @staticmethod
     def checkDatabesExistance():
         conn = sqlite3.connect('database.db')
