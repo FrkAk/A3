@@ -31,8 +31,8 @@ htmlHeader = """
 """
 
 htmlWrong = """
-    <h3>Wrong Username or Password</h3>
-    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br><br>
+    <h3 style="align: center">Wrong Username or Password</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
     <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
 
 
@@ -45,6 +45,7 @@ htmlNewPosition = """
             <div class="form-container table-wrapper">
                 <form action="post.py" method="post">
                     <h2>Create a Job Position</h2>
+                    <span>Fill the blanks</span>
                     <input type="text" placeholder="Position Name"  name="position"/>
                     <input type="text" placeholder="Description" name="description"/>
                     <input type="text" placeholder="Expectation" name="expectation"/>

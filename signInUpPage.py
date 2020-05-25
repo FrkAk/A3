@@ -36,7 +36,7 @@ htmlSignInUP = """
             <div class="form-container sign-in-container">
                 <form  action="loginCookie.py" method="post">
                     <h1>Sign in</h1>
-                    <span>or use your account</span>
+                    <span>use your account</span>
                     <input type="text" placeholder="Username" name="username"/>
                     <input type="password" placeholder="Password" name="companypassword"/>
                     <button type = "submit" id="signInNow" >Sign In</button>
@@ -57,6 +57,8 @@ htmlSignInUP = """
                 </div>
             </div>
         </div>
+   <button type = "button" style= "position: absolute; top: 30px; right: 25px;" 
+    onclick = "window.location.href='index.py'" >Home Page</button>
     <script src="login.js"></script>
     </body>
 </html>

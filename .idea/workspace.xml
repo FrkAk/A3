@@ -28,12 +28,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5c6700b7-5de3-45e9-9a0a-deebdb282fce" name="Default Changelist" comment="gsgdg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companydetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/companydetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginCookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginCookie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signInUpPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/signInUpPage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Python.register">
     <configuration name="Database" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -221,7 +218,7 @@
       <workItem from="1590389621804" duration="4463000" />
       <workItem from="1590395863710" duration="515000" />
       <workItem from="1590400208271" duration="24263000" />
-      <workItem from="1590428375778" duration="5993000" />
+      <workItem from="1590428375778" duration="10443000" />
     </task>
     <task id="LOCAL-00001" summary="gsgdg">
       <created>1590157439492</created>
@@ -287,42 +284,42 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="686" y="220" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590390051194" />
-    <state width="1865" height="242" key="GridCell.Tab.0.bottom" timestamp="1590431658504">
+    <state width="1848" height="242" key="GridCell.Tab.0.bottom" timestamp="1590434647829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590431658504" />
-    <state width="1865" height="242" key="GridCell.Tab.0.center" timestamp="1590431658503">
+    <state width="1848" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647829" />
+    <state width="1848" height="242" key="GridCell.Tab.0.center" timestamp="1590434647829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590431658503" />
-    <state width="1865" height="242" key="GridCell.Tab.0.left" timestamp="1590431658503">
+    <state width="1848" height="242" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647829" />
+    <state width="1848" height="242" key="GridCell.Tab.0.left" timestamp="1590434647829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590431658503" />
-    <state width="1865" height="242" key="GridCell.Tab.0.right" timestamp="1590431658504">
+    <state width="1848" height="242" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647829" />
+    <state width="1848" height="242" key="GridCell.Tab.0.right" timestamp="1590434647829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590431658504" />
-    <state width="1865" height="242" key="GridCell.Tab.1.bottom" timestamp="1590431659491">
+    <state width="1848" height="242" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647829" />
+    <state width="1848" height="242" key="GridCell.Tab.1.bottom" timestamp="1590434647830">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590431659491" />
-    <state width="1865" height="242" key="GridCell.Tab.1.center" timestamp="1590431659491">
+    <state width="1848" height="242" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
+    <state width="1848" height="242" key="GridCell.Tab.1.center" timestamp="1590434647830">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590431659491" />
-    <state width="1865" height="242" key="GridCell.Tab.1.left" timestamp="1590431659491">
+    <state width="1848" height="242" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
+    <state width="1848" height="242" key="GridCell.Tab.1.left" timestamp="1590434647830">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590431659491" />
-    <state width="1865" height="242" key="GridCell.Tab.1.right" timestamp="1590431659491">
+    <state width="1848" height="242" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
+    <state width="1848" height="242" key="GridCell.Tab.1.right" timestamp="1590434647830">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="242" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590431659491" />
-    <state x="351" y="83" key="SettingsEditor" timestamp="1590390074328">
+    <state width="1848" height="242" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
+    <state x="351" y="83" key="SettingsEditor" timestamp="1590440664350">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="351" y="83" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590390074328" />
+    <state x="351" y="83" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590440664350" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1590345916620">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -369,12 +366,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/loginCookie.py</url>
-          <line>107</line>
+          <line>108</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/loginCookie.py</url>
-          <line>134</line>
+          <line>135</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
