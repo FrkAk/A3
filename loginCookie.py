@@ -39,51 +39,60 @@ htmlWrong = """
 
 """
 
-htmlTemp = """
-    <h3>Hello</h3>
-    <p>Login successful</p>
-"""
 
 htmlNewPosition = """
     <h2>Post your Job</h2>
-        <div class="container" id="container">
-            <div class="form-container post-container">
+            <div class="form-container table-wrapper">
                 <form action="post.py" method="post">
-                    <h1>Create a Job Position</h1>
+                    <h2>Create a Job Position</h2>
                     <input type="text" placeholder="Position Name"  name="position"/>
                     <input type="text" placeholder="Description" name="description"/>
                     <input type="text" placeholder="Expectation" name="expectation"/>
                     <input type="text" placeholder="Deadline" name="deadline"/>
-                    <button type = "submit" id="post">Post</button><br> <br>
+                    <button type = "submit" id="post">Post</button><br>
                     <button type = "button" onclick = "window.location.href='index.py'">Log Out</button>
                 </form>
-            </div>
         </div>
 """
 
-htmlPositionTabHeader = """
-    <br><br><table>
-            <tr>
-              <th>Position Name</th>
-              <th>Description</th>
-              <th>Expectations</th>
-              <th>Deadline</th>
-            </tr>
-
+htmltable = """
+        <br><br><div class="table-wrapper">
+            <span class="counter pull-right"></span>
+            <table class="fl-table table table-hover table-bordered results">
+                <thead>
+                <tr>
+                    <th>{userN}</th>
+                </tr>
+                <tr>
+                    <th>Position Name</th>
+                    <th>Description</th>
+                    <th>Expectations</th>
+                    <th>Deadline</th>
+                </tr>
+                </thead>
+                <tbody>
 """
 
 htmlrow = """
-        <tr> 
+            <tr> 
                 <td>{i[0]}</td>
                 <td>{i[1]}</td>
                 <td>{i[2]}</td>
                 <td>{i[3]}</td>
-        </tr>
+            </tr>
 """
 
-htmlTableEnd = """
-</table>
+htmlEmpty= """
+                <tr> 
+                    <th>There is no offer</th  >
+                </tr>
 """
+htmltableEnd= """
+            </tbody>
+        </table>
+    </div>
+"""
+
 
 htmlend = """
         </body>
@@ -95,26 +104,29 @@ name = form.getvalue("username")
 pwd = form.getvalue('companypassword')
 liste = [name, pwd]
 
-
-
-
 user = db.authenticationForCompany(liste)
-
-
-
 
 #user = "apple"
 
 if user is not None:
     cokieSetter(user)
     print(htmlHeader)
-    print(htmlTemp)
+
     if "HTTP_COOKIE" in os.environ:
         cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
         cUser = cookie["username"].value
         print(htmlNewPosition)
-        print("<p>Username= {cUser}</p>".format(**locals()))
+        userN = user.capitalize()
+        print(htmltable.format(**locals()))
+        position = db.getinternshippositionsforacompany(user)
+        if len(position) == 0:
+            print(htmlEmpty)
+        else:
+            for i in position:
+                print(htmlrow.format(**locals()))
+        print(htmltableEnd)
         print(htmlend)
+
 
     else:
         print("<p>Login Required!</p>")
