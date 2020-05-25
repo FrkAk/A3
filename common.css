@@ -84,12 +84,12 @@ input {
 
 .table-wrapper{
     margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    box-shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
 }
 
 .fl-table {
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
@@ -137,3 +137,8 @@ input {
   padding:8px;
   color:#ccc;
 }
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );}

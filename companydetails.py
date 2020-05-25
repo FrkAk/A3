@@ -3,25 +3,23 @@ import cgi
 from Database import Database as db
 import sys
 
-a =  ('Number of arguments: %d' % len(sys.argv))
-b =  ('Argument List:'+ str(sys.argv))
+a = ('Number of arguments: %d' % len(sys.argv))
+b = ('Argument List:' + str(sys.argv))
 if len(sys.argv) == 1:
-  print("Error")
+    print("Error")
 else:
-  details = db.companyDetails(sys.argv[1])
+    details = db.companyDetails(sys.argv[1])
 htmlheader = """
 <html>
     <head>
         <title>Company</title>
-        <style>
-          table, th, td {
-            border: 1px solid black;
-            background-color:darkgray;
-          }
-        </style>
-    </head>
+        <link rel="stylesheet" href="common.css">
+    </head>
     <body>
-        <table style="width:50%; margin-left:auto;margin-right:auto;">
+    
+    <div class="table-wrapper">
+        <table class="fl-table table table-hover table-bordered results">
+            <thead>
             <tr>
               <th>Software Company</th>
               <th>Email</th>
@@ -30,7 +28,9 @@ htmlheader = """
               <th>Address</th>
               <th>City</th>
             </tr>
-"""       
+            </thead>
+            <tbody>
+"""
 htmlrow = """
          <tr> 
                 <td >{details[0]} </td>
@@ -41,9 +41,16 @@ htmlrow = """
                 <td>{details[5]}</td>
             </tr>
 """
+
 htmlfootter = """
-</body></html>
+          </tbody>
+      </table>
+    </div>
+    <button type = "button" onclick = "window.location.href='index.py'" > Back</button>
+  </body>
+</html>
 """
 print(htmlheader)
+
 print(htmlrow.format(**locals()))
 print(htmlfootter)

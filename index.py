@@ -2,12 +2,11 @@
 import cgi
 from Database import Database as db
 
-
-htmltable ="""
+htmlHeader = """
 <html>
     <head>
         <title>Northern Cyprus Internship Positions</title>
-         <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="common.css">
         
     </head>
     <body>
@@ -16,27 +15,27 @@ htmltable ="""
             <input type="text" class="search form-control" placeholder="What you looking for?">
         </div>    
         <button type = "button" onclick = "window.location.href='signInUpPage.py'" > Sign In/Sign Up </button>
-       
-        
+ """
+htmltable = """
         <div class="table-wrapper">
             <span class="counter pull-right"></span>
             <table class="fl-table table table-hover table-bordered results">
                 <thead>
                 <tr>
-                    <th class="col-md-5 col-xs-5">Software Company</th>
-                    <th class="col-md-4 col-xs-4">Position Name</th>
-                    <th class="col-md-3 col-xs-3">Description</th>
-                    <th class="col-md-2 col-xs-2">Expectations</th>
-                    <th class="col-md-1 col-xs-1">Deadline</th>
+                    <th>Software Company</th>
+                    <th>Position Name</th>
+                    <th>Description</th>
+                    <th>Expectations</th>
+                    <th>Deadline</th>
                 </tr>
-                <tr class="warning no-result">
-                    <td colspan="4"><i class="fa fa-warning"></i> No result</td>
-                 </tr>
+               <tr class="warning no-result">
+                    <td colspan="4"><i class="fa fa-warning"></i>No active internship position found</td>
+                </tr>
                 </thead>
                 <tbody>
-           
 """
-print(htmltable)
+
+print(htmlHeader)
 i = 0
 positions = db.getinternshippositions()
 htmlrow = """
@@ -50,19 +49,16 @@ htmlrow = """
 """
 
 htmlend = """
-        <tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="search.js"></script>
-        </body>
+     </body>
 </html>
 """
-
+print(htmltable)
 for i in positions:
     print(htmlrow.format(**locals()))
-    
+
 print(htmlend)
-
-
-
-
-
