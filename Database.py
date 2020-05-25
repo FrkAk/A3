@@ -174,7 +174,7 @@ class Database():
 
 
         internshipID =  c.execute("SELECT DISTINCT id FROM INTERNSHIPPOSITION "
-                                  "WHERE expectations LIKE ?")
+                                  "WHERE expectations LIKE ?",(keyword,))
 
         IDs = internshipID.fetchall()
 
@@ -183,9 +183,8 @@ class Database():
 
         return IDs
 
-
-
-
+        conn.commit()
+        conn.close()
 
     @staticmethod
     def checkDatabesExistance():
@@ -268,6 +267,6 @@ db = Database()
 #returnval = db.companyDetails(companyname)
 #returnval = db.countRow("SOFTWARECOMPANY")
 #returnval = db.getinternshippositions()
-returnval = db.searchKeyWord("as")
-print(returnval)
+#returnval = db.searchKeyWord("as")
+#print(returnval)
 #db.databaseInitiation()
