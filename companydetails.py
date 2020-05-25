@@ -33,7 +33,7 @@ htmlheader = """
 """
 htmlrow = """
          <tr> 
-                <td >{details[0]} </td>
+                <th >{details[0]} </th>
                 <td>{details[1]}</td>
                 <td>{details[2]}</td>
                 <td>{details[3]}</td>

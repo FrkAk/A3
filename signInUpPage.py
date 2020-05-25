@@ -11,18 +11,25 @@ htmlSignInUP = """
     <body>
         <h2>Post your Job after Sign in/up Form</h2>
         <div class="container" id="container">
-            <div class="form-container sign-up-container">
+            <div class="form-container sign-up-container box">
                 <form action="register.py" method="post">
                     <h1>Create Account</h1>
                     <span>with your email for registration</span>
                     <input type="text" placeholder="Company Name"  name="companyname"/>
                     <input type="text" placeholder="Username" name="username"/>
-                    <input type="tel" placeholder="Phone Number" id="phone" name="telephone">
-                    <input type="text" placeholder="City" name="city"/>
-                    <input type="text" placeholder="Postal Address" name="address"/>
                     <input type="text" placeholder="Website" name="website"/>
                     <input type="email" placeholder="Email"  name="emailaddress"/>
-                    <input type="password" placeholder="Password" name="companypassword"/>
+                    <input type="tel" placeholder="Telephone"  name="telephone"/>
+                    <input type="password" placeholder="Password" name="companypassword"/>         
+                    <input type="text" placeholder="Postal Address" name="address"/>
+                    <select name="city" id="city">
+                            <option value="Gazimagusa">Gazimagusa</option>
+                            <option value="Girne">Girne</option>
+                            <option value="Guzelyurt">Guzelyurt</option>
+                            <option value="Iskele">Iskele</option>
+                            <option value="Lefke">Lefke</option>
+                            <option value="Lefkosa">Lefkosa</option>
+                    </select><br>
                     <button type = "submit" id="signUpNow">Sign Up</button>
                 </form>
             </div>

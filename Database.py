@@ -94,7 +94,7 @@ class Database():
 
         for i in registrationDetails:
             if i is None:
-                return "NullValue" # if return value is null value registeration will not be accepted
+                return False # if return value is null value registeration will not be accepted
 
         keyUsername = registrationDetails[0]
 
