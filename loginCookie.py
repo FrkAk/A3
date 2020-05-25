@@ -5,7 +5,22 @@ import random
 import cgi
 import os
 
-print("Content-type: text/html")
+
+def cokieSetter(user):
+    cookie = Cookie.SimpleCookie()
+    cookie["session"] = random.randint(1, 1000000000)
+    cookie["session"]["domain"] = "localhost/"
+    cookie["session"]["path"] = "/"
+    cookie["username"] = user
+    print("Content-type: text/html")
+    print("{}".format(cookie.output()))
+
+def cookieReset():
+    if "HTTP_COOKIE" in os.environ:
+        tempUser = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
+        tempUser.clear()
+
+
 htmlHeader = """
 <html>
     <head>
@@ -18,7 +33,7 @@ htmlHeader = """
 htmlWrong = """
     <h3>Wrong Username or Password</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Back</button>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
 
 
 
@@ -40,7 +55,7 @@ htmlNewPosition = """
                     <input type="text" placeholder="Expectation" name="expectation"/>
                     <input type="text" placeholder="Deadline" name="deadline"/>
                     <button type = "submit" id="post">Post</button><br> <br>
-                    <button type = "button" onclick = "window.location.href='index.py'" >Log Out</button>
+                    <button type = "button" onclick = "window.location.href='index.py'">Log Out</button>
                 </form>
             </div>
         </div>
@@ -79,35 +94,34 @@ form = cgi.FieldStorage()
 name = form.getvalue("username")
 pwd = form.getvalue('companypassword')
 liste = [name, pwd]
+
+
+
+
 user = db.authenticationForCompany(liste)
+
+
+
+
 #user = "apple"
-print(htmlHeader)
+
 if user is not None:
-    cookie = Cookie.SimpleCookie()
-    cookie["session"] = random.randint(1, 1000000000)
-    cookie["session"]["domain"] = "localhost/login.py"
-    cookie["session"]["path"] = "/"
-    cookie["username"] = user
-    session_cookie = cookie.output().replace("Set-Cookie: ", "")
+    cokieSetter(user)
+    print(htmlHeader)
     print(htmlTemp)
-
-
-else:
-    print(htmlWrong)
-
-if "HTTP_COOKIE" in os.environ:
-    cookies = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
-    if "session" in cookies.keys():
+    if "HTTP_COOKIE" in os.environ:
+        cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
         cUser = cookie["username"].value
         print(htmlNewPosition)
         print("<p>Username= {cUser}</p>".format(**locals()))
-        print("<p>Username= {cUser1}</p>".format(**locals()))
-
         print(htmlend)
+
     else:
         print("<p>Login Required!</p>")
         print(htmlend)
 
+
 else:
-    print("<p>Login Required!</p>")
-    print(htmlend)
+    print(htmlHeader)
+    print(htmlWrong)
+

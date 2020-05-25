@@ -12,9 +12,10 @@ class Database():
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
 
-        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* FROM "
-                                     "INTERNSHIPPOSITION INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = "
-                                     "INTERNSHIPPOSITION.companyusername")
+        internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* ,SOFTWARECOMPANY.citycode "
+                                     "FROM INTERNSHIPPOSITION "
+                                     "INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername "
+                                     "ORDER BY citycode")
 
         internships = internshipdetail.fetchall()
 
@@ -27,6 +28,9 @@ class Database():
             for i in  internships:
                 liste.append(i)
             return liste
+
+
+
 
     @staticmethod
     def getinternshippositionsforacompany(user):
