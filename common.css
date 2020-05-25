@@ -10,8 +10,8 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+	height: max-content;
+	margin: 10px 0 50px;
 }
 h1 {
 	font-weight: bold;
@@ -98,8 +98,8 @@ input {
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
+    width: 150%;
+    max-width:50%;
     white-space: nowrap;
     background-color: white;
 }

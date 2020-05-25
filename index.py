@@ -19,7 +19,7 @@ htmlHeader = """
 htmltable = """
         <div class="table-wrapper">
             <span class="counter pull-right"></span>
-            <table class="fl-table results">
+            <table class="fl-table table table-hover table-bordered results">
                 <thead>
                 <tr>
                     <th>{cityname}</th>
