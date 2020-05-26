@@ -49,7 +49,7 @@ htmlNewPosition = """
                     <input type="text" placeholder="Position Name"  name="position"/>
                     <input type="text" placeholder="Description" name="description"/>
                     <input type="text" placeholder="Expectation" name="expectation"/>
-                    <input type="text" placeholder="Deadline" name="deadline"/>
+                    <input type="date" placeholder="Deadline" name="deadline"/>
                     <button type = "submit" id="post">Post</button><br>
                     <button type = "button" onclick = "window.location.href='index.py'">Log Out</button>
                 </form>

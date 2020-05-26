@@ -15,7 +15,7 @@ class Database():
         internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* ,SOFTWARECOMPANY.citycode "
                                      "FROM INTERNSHIPPOSITION "
                                      "INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername "
-                                     "ORDER BY citycode")
+                                     "ORDER BY citycode, deadline")
 
         internships = internshipdetail.fetchall()
 
@@ -252,7 +252,7 @@ class Database():
 
         companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.','123',1)]
 
-        intership = [(8,'kole','freekole', 'everythingbutlittlelittle','today','apple'),(7,'efde','freaewfsekole', 'asdf','todfday','apple')]
+        intership = [(8,'kole','freekole', 'everythingbutlittlelittle','2020-05-04','apple'),(7,'efde','freaewfsekole', 'asdf','2021-04-08','apple')]
 
         c.executemany("INSERT INTO CITY(citycode, cityname)VALUES(?, ?)", cities)
         c.executemany("INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, sessionid, citycode)VALUES(?,?,?,?,?,?,?,?,?)",companies)
@@ -262,7 +262,7 @@ class Database():
         conn.close()
 
 
-listeintern = ["googleintern","Summer Intern","Fulltime Internship","02/08/2020","google"]
+listeintern = ["googleintern","Summer Intern","Fulltime Internship","2020-04-05","google"]
 listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
 account = ["username","password"]
 companyname = "Apple"
