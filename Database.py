@@ -248,23 +248,38 @@ class Database():
                   (5, 'Lefke'),
                   (6, 'Lefkosa')]
 
-        companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.',1),
-                     ('google','google123','google.com','Google','google@google.com','14785239','google blv. 456 st.',2),
-                     ('twitter','twit123','twitter.com','Twitter','twitter@twitter.com','1518468','twitter blv. 789 st.',3),
-                     ('facebook','feys123','facebook.com','Facebook','facebook@facebook.com','14785236','facebook blv. 1234 st.',4),
-                     ('reddit','red123','reddit.com','Reddit','reddit@reddit.com','14782536','reddit blv. 4125 st.',5),
-                     ('github','git123','github.com','GitHub','github@git.com','146589465','github blv. 254 st.',6)]
+        companies = [('apple', 'apple123', 'apple.com', 'Apple', 'apple@apple.com', '0123456', 'apple blv. 123 st.', 1),
+                     ('google', 'google123', 'google.com', 'Google', 'google@google.com', '14785239',
+                      'google blv. 456 st.',
+                      2),
+                     ('twitter', 'twit123', 'twitter.com', 'Twitter', 'twitter@twitter.com', '1518468',
+                      'twitter blv. 789 st.', 3),
+                     ('facebook', 'feys123', 'facebook.com', 'Facebook', 'facebook@facebook.com', '14785236',
+                      'facebook blv. 1234 st.', 4),
+                     ('reddit', 'red123', 'reddit.com', 'Reddit', 'reddit@reddit.com', '14782536',
+                      'reddit blv. 4125 st.',
+                      5),
+                     ('github', 'git123', 'github.com', 'GitHub', 'github@git.com', '146589465', 'github blv. 254 st.',
+                      6)]
 
-        intership = [(1,'Apple Summer Intern','C/C++ Intern', 'Knowing C/C++, Java is a Plus','2020-06-14','apple'),
-                     (2,'Google Summer Intern','Python Open Source Developer', 'Scripting Language is a must','2020-06-18','google'),
-                     (2, 'Twitter Summer Intern', 'React Developer Intern', 'React Frame is a must','2020-07-18', 'twitter')]
+        intership = [(1, 'Apple Summer Intern', 'C/C++ Intern', 'Knowing C/C++, Java is a Plus', '2020-06-14', 'apple'),
+                     (2, 'Google Summer Intern', 'Python Open Source Developer', 'Scripting Language is a must',
+                      '2020-06-18', 'google'),
+                     (3, 'Twitter Summer Intern', 'React Developer Intern', 'React Frame is a must', '2020-07-18',
+                      'twitter')]
 
         c.executemany("INSERT INTO CITY(citycode, cityname)VALUES(?, ?)", cities)
-        c.executemany("INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, citycode)VALUES(?,?,?,?,?,?,?,?)",companies)
-        c.executemany("INSERT INTO INTERNSHIPPOSITION(id,internshipname, details, expectations, deadline, companyusername)VALUES(?,?,?,?,?,?)", intership)
+        c.executemany(
+            "INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, citycode)VALUES(?,?,?,?,?,?,?,?)",
+            companies)
+        c.executemany(
+            "INSERT INTO INTERNSHIPPOSITION(id,internshipname, details, expectations, deadline, companyusername)VALUES(?,?,?,?,?,?)",
+            intership)
+
 
         conn.commit()
         conn.close()
+
 
 
 #listeintern = ["googleintern","Summer Intern","Fulltime Internship","2020-04-05","google"]
