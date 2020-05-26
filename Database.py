@@ -110,7 +110,7 @@ class Database():
         city = citycode.fetchone()
         registrationDetails[6] = city[0]
         c.execute(
-            "INSERT INTO SOFTWARECOMPANY(username, pwd, companyname, email, telephone,website, citycode, address, sessionid)VALUES(?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO SOFTWARECOMPANY(username, pwd, companyname, email, telephone,website, citycode, address)VALUES(?,?,?,?,?,?,?,?)",
             registrationDetails)
 
         conn.commit()
@@ -203,7 +203,6 @@ class Database():
 
         # if the count is 1, then table exists
         if c.fetchone()[0] == 1:
-            print('Table exists.')
             flag = True
 
         # commit the changes to db
@@ -229,7 +228,6 @@ class Database():
                     email TEXT NOT NULL,
                     telephone INTEGER,
                     address TEXT NOT NULL,
-                    sessionid INTEGER,
                     citycode INTEGER,
                     FOREIGN KEY (citycode) REFERENCES CITY (citycode))
                     """)
@@ -239,7 +237,7 @@ class Database():
                      internshipname TEXT NOT NULL,
                      details TEXT NOT NULL,
                      expectations TEXT NOT NULL,
-                     deadline TEXT NOT NULL,
+                     deadline DATE NOT NULL,
                      companyusername TEXT NOT NULL,
                      FOREIGN KEY (companyusername) REFERENCES SOFTWARECOMPANY (username))""")
 
@@ -250,23 +248,30 @@ class Database():
                   (5, 'Lefke'),
                   (6, 'Lefkosa')]
 
-        companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.','123',1)]
+        companies = [('apple','apple123','apple.com','Apple','apple@apple.com','0123456','apple blv. 123 st.',1),
+                     ('google','google123','google.com','Google','google@google.com','14785239','google blv. 456 st.',2),
+                     ('twitter','twit123','twitter.com','Twitter','twitter@twitter.com','1518468','twitter blv. 789 st.',3),
+                     ('facebook','feys123','facebook.com','Facebook','facebook@facebook.com','14785236','facebook blv. 1234 st.',4),
+                     ('reddit','red123','reddit.com','Reddit','reddit@reddit.com','14782536','reddit blv. 4125 st.',5),
+                     ('github','git123','github.com','GitHub','github@git.com','146589465','github blv. 254 st.',6)]
 
-        intership = [(8,'kole','freekole', 'everythingbutlittlelittle','2020-05-04','apple'),(7,'efde','freaewfsekole', 'asdf','2021-04-08','apple')]
+        intership = [(1,'Apple Summer Intern','C/C++ Intern', 'Knowing C/C++, Java is a Plus','2020-06-14','apple'),
+                     (2,'Google Summer Intern','Python Open Source Developer', 'Scripting Language is a must','2020-06-18','google'),
+                     (2, 'Twitter Summer Intern', 'React Developer Intern', 'React Frame is a must','2020-07-18', 'twitter')]
 
         c.executemany("INSERT INTO CITY(citycode, cityname)VALUES(?, ?)", cities)
-        c.executemany("INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, sessionid, citycode)VALUES(?,?,?,?,?,?,?,?,?)",companies)
+        c.executemany("INSERT INTO SOFTWARECOMPANY(username, pwd, website, companyname, email, telephone, address, citycode)VALUES(?,?,?,?,?,?,?,?)",companies)
         c.executemany("INSERT INTO INTERNSHIPPOSITION(id,internshipname, details, expectations, deadline, companyusername)VALUES(?,?,?,?,?,?)", intership)
 
         conn.commit()
         conn.close()
 
 
-listeintern = ["googleintern","Summer Intern","Fulltime Internship","2020-04-05","google"]
-listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
-account = ["username","password"]
-companyname = "Apple"
-db = Database()
+#listeintern = ["googleintern","Summer Intern","Fulltime Internship","2020-04-05","google"]
+#listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
+#account = ["username","password"]
+#companyname = "Apple"
+#db = Database()
 #returnval = db.internshipAdd(listeintern)
 #returnval = db.registerationForCompany(listecomany)
 #returnval = db.authenticationForCompany(account)

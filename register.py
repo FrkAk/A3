@@ -47,7 +47,6 @@ liste.append(form.getvalue('telephone'))
 liste.append(form.getvalue('website'))
 liste.append(form.getvalue('city'))
 liste.append(form.getvalue('address'))
-liste.append(0)  # Gözden Geçirilecek
 
 
 

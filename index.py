@@ -66,6 +66,8 @@ htmlend = """
 </html>
 """
 
+if not db.checkDatabesExistance():
+    db.databaseInitiation()
 
 i = 0
 positions = db.getinternshippositions()
