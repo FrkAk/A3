@@ -15,7 +15,7 @@ class Database():
         internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* ,SOFTWARECOMPANY.citycode "
                                      "FROM INTERNSHIPPOSITION "
                                      "INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername "
-                                     "ORDER BY citycode, deadline")
+                                     "ORDER BY  deadline DESC")
 
         internships = internshipdetail.fetchall()
 
@@ -39,7 +39,7 @@ class Database():
 
         internshipdetail = c.execute(
             "SELECT internshipname,details,expectations,deadline FROM INTERNSHIPPOSITION "
-            "WHERE companyusername = ?",(user,))
+            "WHERE companyusername = ? ORDER BY  deadline DESC",(user,))
 
         internships = internshipdetail.fetchall()
 

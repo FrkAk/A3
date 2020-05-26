@@ -28,10 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5c6700b7-5de3-45e9-9a0a-deebdb282fce" name="Default Changelist" comment="gsgdg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginCookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginCookie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signInUpPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/signInUpPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +217,7 @@
       <workItem from="1590395863710" duration="515000" />
       <workItem from="1590400208271" duration="24263000" />
       <workItem from="1590428375778" duration="10443000" />
+      <workItem from="1590489155216" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="gsgdg">
       <created>1590157439492</created>
