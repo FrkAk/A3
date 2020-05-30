@@ -20,6 +20,19 @@ htmlWrong = """
 </html>
 """
 
+htmlCookie = """
+<html>
+        <head>
+            <title>Post Error</title>  
+            <link rel="stylesheet" href="common.css">
+        </head>
+    <body>
+         <h2>Login Required - Error Code: 121</h2>
+         <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Back</button>
+    </body>
+</html>
+"""
+
 htmlUser = """
       <html>
        <head>
@@ -42,19 +55,21 @@ if "HTTP_COOKIE" in os.environ:
     cookies = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
     cUser = str(db.getSessionUsername(cookies["sessionID"].value))
 
+    form = cgi.FieldStorage()
+
+    internshipliste.append(form.getvalue("position"))
+    internshipliste.append(form.getvalue('description'))
+    internshipliste.append(form.getvalue('expectation'))
+    internshipliste.append(form.getvalue('deadline'))
+    internshipliste.append(cUser)
+
+    returnval = db.internshipAdd(internshipliste)
+    if returnval == "NullValue":
+        print(htmlWrong)
+    else:
+        print(htmlUser.format(**locals()))
+
 else:
-    print(htmlWrong)
+    print(htmlCookie)
 
-form = cgi.FieldStorage()
 
-internshipliste.append(form.getvalue("position"))
-internshipliste.append(form.getvalue('description'))
-internshipliste.append(form.getvalue('expectation'))
-internshipliste.append(form.getvalue('deadline'))
-internshipliste.append(cUser)
-
-returnval = db.internshipAdd(internshipliste)
-if returnval == "NullValue":
-    print(htmlWrong)
-else:
-    print(htmlUser.format(**locals()))

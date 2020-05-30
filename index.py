@@ -41,10 +41,6 @@ htmltable = """
                 <tr>
                     <td id={warningID} style="display: none">No active internship position found</td>
                 </tr>
-               
-                
-
-
 """
 
 htmlrow = """

@@ -3,9 +3,6 @@ from Database import Database as db
 import cgi
 
 
-
-
-
 htmlRedirectIndex = """
 <html>
     <head>
@@ -15,7 +12,7 @@ htmlRedirectIndex = """
 
     <body>
     <h3>Successfully Registered</h3>
-    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Home Page </button>
     </body>
 </html>
 
