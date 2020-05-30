@@ -20,10 +20,6 @@ class Database():
                                      "ORDER BY  deadline DESC", (today,))
 
         internships = internshipdetail.fetchall()
-
-
-
-
         conn.commit()
         conn.close()
         liste = []
@@ -33,9 +29,6 @@ class Database():
             for i in  internships:
                 liste.append(i)
             return liste
-
-
-
 
     @staticmethod
     def getinternshippositionsforacompany(user):
@@ -58,20 +51,6 @@ class Database():
                 liste.append(i)
             return liste
 
-    @staticmethod
-    def countRow(tablename):
-        conn = sqlite3.connect("database.db")
-        c = conn.cursor()
-
-        allpositions = c.execute("SELECT * FROM %s" % tablename )
-
-        records = allpositions.fetchall()
-        count = len(records)
-
-        conn.commit()
-        conn.close()
-
-        return count    
     @staticmethod 
     def authenticationForCompany(account):
         conn = sqlite3.connect("database.db")
@@ -157,7 +136,6 @@ class Database():
     def companyDetails(companyName):
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
-        # CİTY is missing from infos
         companyExist =c.execute("SELECT companyname,email,telephone,website,address,cityname FROM SOFTWARECOMPANY "
                                 "INNER JOIN CITY ON SOFTWARECOMPANY.citycode = CITY.citycode "
                                 "WHERE companyname = ? ",(companyName,))
@@ -167,13 +145,13 @@ class Database():
         for i in companyInfo[0]:
             liste.append(i)
 
+        conn.commit()
+        conn.close()
+
         if companyInfo == []:
             return "Company existing error"
         else:
-            return liste # add city
-
-        conn.commit()
-        conn.close()
+            return liste
 
     @staticmethod
     def addLog(sesionID,username):
@@ -231,25 +209,6 @@ class Database():
         else:
             return None
 
-    @staticmethod
-    def searchKeyWord(keyword):
-        conn = sqlite3.connect("database.db")
-        c = conn.cursor()
-
-
-        internshipID =  c.execute("SELECT DISTINCT id FROM INTERNSHIPPOSITION "
-                                  "WHERE expectations LIKE ?",(keyword,))
-
-        IDs = internshipID.fetchall()
-
-        if IDs == []:
-            return False
-
-        return IDs
-
-
-        conn.commit()
-        conn.close()
     @staticmethod
     def checkDatabesExistance():
         conn = sqlite3.connect('database.db')
@@ -343,20 +302,4 @@ class Database():
         conn.commit()
         conn.close()
 
-
-
-#listeintern = ["googleintern","Summer Intern","Fulltime Internship","2020-04-05","google"]
-#listecomany = ["asdf","asf","website","cname","email","tel","add","sıd"]
-#account = ["username","password"]
-#companyname = "Apple"
-#db = Database()
-#returnval = db.internshipAdd(listeintern)
-#returnval = db.registerationForCompany(listecomany)
-#returnval = db.authenticationForCompany(account)
-#returnval = db.companyDetails(companyname)
-#returnval = db.countRow("SOFTWARECOMPANY")
-#returnval = db.getinternshippositions()
-#returnval = db.searchKeyWord("as")
-#print(returnval)
-#db.databaseInitiation()
 
