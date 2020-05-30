@@ -12,35 +12,30 @@ htmlHeader = """
     <body>
         <h1>Welcome to Northern Cyprus Internship Website</h1>
         <div class="form-group pull-right">
-            <input type="text" class="search form-control" placeholder="What you looking for?">
+            <input type="text" id="myInput" onkeyup="searchFromTables()" placeholder="What you looking for...">
         </div>    
         <button type = "button" onclick = "window.location.href='signInUpPage.py'" > Sign In/Sign Up </button>
  """
 htmltable = """
-        <div class="table-wrapper">
-            <span class="counter pull-right"></span>
-            <table class="fl-table table table-hover table-bordered results">
-                <thead>
-                <tr>
+        <div class = "table-wrapper">
+            <table id="{tableID}" class= "myTable" >
+            <tbody>
+                <tr class="myTableHeader">
                     <th>{cityname}</th>
                 </tr>
-                <tr>
+                <tr class="myTableHeader">
                     <th>Software Company</th>
                     <th>Position Name</th>
                     <th>Description</th>
                     <th>Expectations</th>
                     <th>Deadline</th>
                 </tr>
-               <tr class="warning no-result">
-                    <td colspan="4"><i class="fa fa-warning"></i>No active internship position found</td>
-                </tr>
-                </thead>
-                <tbody>
+
 """
 
 htmlrow = """
                 <tr> 
-                    <th scope="row"> <a onclick = "window.location.href='companydetails.py?{i[0]}'"> {i[0]} </a></th>
+                    <td class="myTableHeader"> <a onclick = "window.location.href='companydetails.py?{i[0]}'"> {i[0]} </a></td>
                     <td>{i[2]}</td>
                     <td>{i[3]}</td>
                     <td>{i[4]}</td>
@@ -54,13 +49,12 @@ htmlEmpty= """
                 </tr>
 """
 htmltableEnd= """
-            </tbody>
+        </tbody>
         </table>
         </div>
 """
 
 htmlend = """
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="search.js"></script>
      </body>
 </html>
@@ -97,6 +91,7 @@ for i in positions:
 print(htmlHeader)
 
 cityname= "Gazimagusa"
+tableID= "table" + str(1)
 print(htmltable.format(**locals()))
 if len(gazi)==0:
     print(htmlEmpty)
@@ -106,6 +101,7 @@ else:
 print(htmltableEnd)
 
 cityname= "Girne"
+tableID= "table" + str(2)
 print(htmltable.format(**locals()))
 if len(girne)==0:
     print(htmlEmpty)
@@ -116,6 +112,7 @@ print(htmltableEnd)
 
 
 cityname= "Guzelyurt"
+tableID= "table" + str(3)
 print(htmltable.format(**locals()))
 if len(guzelyurt)==0:
     print(htmlEmpty)
@@ -125,6 +122,7 @@ else:
 print(htmltableEnd)
 
 cityname= "Iskele"
+tableID= "table" + str(4)
 print(htmltable.format(**locals()))
 if len(iskele)==0:
     print(htmlEmpty)
@@ -134,6 +132,7 @@ else:
 print(htmltableEnd)
 
 cityname= "Lefke"
+tableID= "table" + str(5)
 print(htmltable.format(**locals()))
 if len(lefke)==0:
     print(htmlEmpty)
@@ -143,6 +142,7 @@ else:
 print(htmltableEnd)
 
 cityname= "Lefkosa"
+tableID= "table" + str(6)
 print(htmltable.format(**locals()))
 if len(lefkosa)==0:
     print(htmlEmpty)

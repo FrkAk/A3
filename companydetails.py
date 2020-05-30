@@ -16,11 +16,12 @@ htmlheader = """
         <link rel="stylesheet" href="common.css">
     </head>
     <body>
+    <h1>Company Details</h1>
     
     <div class="table-wrapper">
-        <table class="fl-table table table-hover table-bordered results">
-            <thead>
-            <tr>
+        <table id="{tableID}" class="myTable">
+        <tbody>
+            <tr class="header">
               <th>Software Company</th>
               <th>Email</th>
               <th>Telephone</th>
@@ -28,12 +29,11 @@ htmlheader = """
               <th>Address</th>
               <th>City</th>
             </tr>
-            </thead>
-            <tbody>
+            
 """
 htmlrow = """
          <tr> 
-                <th >{details[0]} </th>
+                <td class="myTableHeader">{details[0]} </td>
                 <td>{details[1]}</td>
                 <td>{details[2]}</td>
                 <td>{details[3]}</td>
@@ -51,6 +51,6 @@ htmlfootter = """
 </html>
 """
 print(htmlheader)
-
+tableID= "tableComp" + str(1)
 print(htmlrow.format(**locals()))
 print(htmlfootter)

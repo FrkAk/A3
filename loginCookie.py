@@ -73,7 +73,7 @@ htmlNewPosition = """
 htmltable = """
         <br><br><div class="table-wrapper">
             <span class="counter pull-right"></span>
-            <table class="fl-table table table-hover table-bordered results">
+            <table class="myTable">
                 <thead>
                 <tr>
                     <th>{userCapital}</th>

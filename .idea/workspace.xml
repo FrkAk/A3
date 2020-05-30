@@ -27,24 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c6700b7-5de3-45e9-9a0a-deebdb282fce" name="Default Changelist" comment="gsgdg">
-      <change afterPath="$PROJECT_DIR$/cookieCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3af63111-a649-416e-9e92-22935253febf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3af63111-a649-416e-9e92-22935253febf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUpdate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/createpost.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/companydetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/companydetails.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deneme.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deneİndex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginCookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginCookie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginLookGood.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/post.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/signInUpPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/signInUpPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +223,7 @@
       <workItem from="1590428375778" duration="10443000" />
       <workItem from="1590489155216" duration="4359000" />
       <workItem from="1590498714973" duration="2382000" />
-      <workItem from="1590827150321" duration="15407000" />
+      <workItem from="1590827150321" duration="22511000" />
     </task>
     <task id="LOCAL-00001" summary="gsgdg">
       <created>1590157439492</created>
@@ -356,10 +345,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="735" y="418" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590157479544" />
-    <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup" timestamp="1590432830124">
+    <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup" timestamp="1590847685151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590432830124" />
+    <state x="539" y="15" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590847685151" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

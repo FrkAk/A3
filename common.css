@@ -100,12 +100,13 @@ input {
 }
 
 .table-wrapper{
-    margin: 10px 70px 70px;
+	margin: 10px 70px 70px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 	shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
 }
 
-.fl-table {
+.myTable {
+
     border-radius: 5px;
     font-size: 14px;
     font-weight: normal;
@@ -115,44 +116,38 @@ input {
     max-width:100%;
     white-space: nowrap;
     background-color: white;
+
 }
 
-.fl-table td, .fl-table th {
+.myTable td, .myTable th {
     text-align: center;
     padding: 8px;
 }
 
-.fl-table td {
+.myTable td {
     border-right: 1px solid #f8f8f8;
     font-size: 12px;
 }
 
-.fl-table thead th {
+.myTable th {
     color: #ffffff;
     background: #0ae594;
 }
 
+.myTableHeader{
+	color: #ffffff;
+    background: #0ae594;
+	font-size: 14px;
+	font-weight: bold;
+}
 
-.fl-table thead th:nth-child(odd) {
+
+.myTable th:nth-child(odd) {
     color: #ffffff;
     background: #0ae594;
 }
 
-.fl-table tr:nth-child(even) {
+.myTable tr:nth-child(even) {
     background: #F8F8F8;
-}
-
-.results tr[visible='false'],
-.no-result{
-  display:none;
-}
-
-.results tr[visible='true']{
-  display:table-row;
-}
-
-.counter{
-  padding:8px;
-  color:#ccc;
 }
 
