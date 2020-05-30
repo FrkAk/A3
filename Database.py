@@ -170,8 +170,61 @@ class Database():
         conn.commit()
         conn.close()
 
+    @staticmethod
+    def addLog(sesionID,username):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute(
+            "INSERT INTO LOG(sessionID, username)VALUES(?,?)",(sesionID,username,))
+
+        conn.commit()
+        conn.close()
+
+    @staticmethod
+    def getSessionUsername(sesionID):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        user = c.execute(
+            "SELECT DISTINCT username FROM LOG WHERE sessionID = ?", (sesionID,))
+
+        sesionUsername = user.fetchone()
+        conn.commit()
+        conn.close()
+        if sesionUsername is not None:
+            return sesionUsername[0]
+        else:
+            return None
 
 
+    @staticmethod
+    def updateLogStatus(sesionID,statusValue):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute(
+            "UPDATE LOG SET status = ? WHERE sessionID = ?",(statusValue,sesionID,))
+
+        conn.commit()
+        conn.close()
+
+    @staticmethod
+    def getLogStatus(sesionID):
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        status = c.execute(
+            "SELECT status FROM LOG WHERE sessionID = ?", (sesionID,))
+
+        sesionStatus = status.fetchone()
+
+        conn.commit()
+        conn.close()
+        if sesionStatus is not None:
+            return sesionStatus[0]
+        else:
+            return None
 
     @staticmethod
     def searchKeyWord(keyword):
@@ -241,6 +294,11 @@ class Database():
                      companyusername TEXT NOT NULL,
                      FOREIGN KEY (companyusername) REFERENCES SOFTWARECOMPANY (username))""")
 
+        c.execute("""CREATE TABLE LOG(
+                     sessionID TEXT PRIMARY KEY,
+                     username TEXT NOT NULL,
+                     status INTEGER DEFAULT 0)""")
+
         cities = [(1, 'Gazimagusa'),
                   (2, 'Girne'),
                   (3, 'Guzelyurt'),
@@ -296,3 +354,4 @@ class Database():
 #returnval = db.searchKeyWord("as")
 #print(returnval)
 #db.databaseInitiation()
+

@@ -6,21 +6,6 @@ import cgi
 import os
 
 
-def cokieSetter(user):
-    cookie = Cookie.SimpleCookie()
-    cookie["session"] = random.randint(1, 1000000000)
-    cookie["session"]["domain"] = "localhost/"
-    cookie["session"]["path"] = "/"
-    cookie["username"] = user
-    print("Content-type: text/html")
-    print("{}".format(cookie.output()))
-
-def cookieReset():
-    if "HTTP_COOKIE" in os.environ:
-        tempUser = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
-        tempUser.clear()
-
-
 htmlHeader = """
 <html>
     <head>
@@ -34,10 +19,39 @@ htmlWrong = """
     <h3 style="align: center">Wrong Username or Password</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
     <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
-
-
-
 """
+
+htmlSessionError = """
+    <h3 style="align: center">Session Error - Error Code: 118</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+"""
+
+htmlSessionUserError = """
+    <h3 style="align: center">Session User Error  - Error Code: 119</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+"""
+
+htmlLoginError = """
+    <h3 style="align: center">Login Required  - Error Code: 120</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page</button><br>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+"""
+
+
+htmlCookieError = """
+    <h3 style="align: center">Login Required - Error Code: 121</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+"""
+
+htmlKeyError = """
+    <h3 style="align: center">Key Error - Error Code: 122</h3>
+    <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
+    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+"""
+
 
 
 htmlNewPosition = """
@@ -51,7 +65,7 @@ htmlNewPosition = """
                     <input type="text" placeholder="Expectation" name="expectation"/>
                     <input type="date" placeholder="Deadline" name="deadline"/>
                     <button type = "submit" id="post">Post</button><br>
-                    <button type = "button" onclick = "window.location.href='index.py'">Log Out</button>
+                    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Log Out</button>
                 </form>
         </div>
 """
@@ -62,7 +76,7 @@ htmltable = """
             <table class="fl-table table table-hover table-bordered results">
                 <thead>
                 <tr>
-                    <th>{userN}</th>
+                    <th>{userCapital}</th>
                 </tr>
                 <tr>
                     <th>Position Name</th>
@@ -100,41 +114,37 @@ htmlend = """
 </html>
 """
 
-form = cgi.FieldStorage()
-name = form.getvalue("username")
-pwd = form.getvalue('companypassword')
-liste = [name, pwd]
-
-user = db.authenticationForCompany(liste)
-
-#user = "apple"
-
-if user is not None:
-    cokieSetter(user)
-    print(htmlHeader)
-
-    if "HTTP_COOKIE" in os.environ:
-        cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
-        cUser = cookie["username"].value
-        print(htmlNewPosition)
-        userN = user.capitalize()
-        print(htmltable.format(**locals()))
-        position = db.getinternshippositionsforacompany(user)
-        if len(position) == 0:
-            print(htmlEmpty)
+print("Content-type: text/html")
+print(htmlHeader)
+if "HTTP_COOKIE" in os.environ:
+    cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
+    try:
+        if db.getLogStatus(cookie["sessionID"].value) == -1:
+            print(htmlLoginError)
         else:
-            for i in position:
-                print(htmlrow.format(**locals()))
-        print(htmltableEnd)
-        print(htmlend)
+            cUser = db.getSessionUsername(cookie["sessionID"].value)
+            if cUser is None:
+                print(htmlSessionUserError)
+            else:
+                db.updateLogStatus(cookie["sessionID"].value, 1)
+                print(htmlNewPosition)
+                position = db.getinternshippositionsforacompany(cUser)
+                userCapital = cUser.capitalize()
+                print(htmltable.format(**locals()))
 
-
-    else:
-        print("<p>Login Required!</p>")
-        print(htmlend)
+                if len(position) == 0:
+                    print(htmlEmpty)
+                else:
+                    for i in position:
+                        print(htmlrow.format(**locals()))
+                    print(htmltableEnd)
+    except KeyError:
+        print(htmlKeyError)
 
 
 else:
-    print(htmlHeader)
-    print(htmlWrong)
+    print(htmlCookieError)
+print(htmlend)
+
+
 

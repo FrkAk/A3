@@ -27,10 +27,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c6700b7-5de3-45e9-9a0a-deebdb282fce" name="Default Changelist" comment="gsgdg">
-      <change afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cookieCreator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3af63111-a649-416e-9e92-22935253febf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3af63111-a649-416e-9e92-22935253febf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUpdate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/createpost.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deneme.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deneİndex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginCookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginCookie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginLookGood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/post.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/signInUpPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/signInUpPage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +112,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="cookieCreator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="northcyprusswinterns" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cookieCreator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="northcyprusswinterns" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,28 +148,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/index.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="logOut" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="northcyprusswinterns" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logOut.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,10 +203,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Database" />
+        <item itemvalue="Python.loginCookie" />
+        <item itemvalue="Python.cookieCreator" />
         <item itemvalue="Python.index" />
         <item itemvalue="Python.register" />
-        <item itemvalue="Python.loginCookie" />
-        <item itemvalue="Python.logOut" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +232,9 @@
       <workItem from="1590395863710" duration="515000" />
       <workItem from="1590400208271" duration="24263000" />
       <workItem from="1590428375778" duration="10443000" />
-      <workItem from="1590489155216" duration="3562000" />
+      <workItem from="1590489155216" duration="4359000" />
+      <workItem from="1590498714973" duration="2382000" />
+      <workItem from="1590827150321" duration="15407000" />
     </task>
     <task id="LOCAL-00001" summary="gsgdg">
       <created>1590157439492</created>
@@ -284,38 +300,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="686" y="220" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590390051194" />
-    <state width="1865" height="324" key="GridCell.Tab.0.bottom" timestamp="1590490943589">
+    <state width="1865" height="244" key="GridCell.Tab.0.bottom" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590490943589" />
-    <state width="1865" height="324" key="GridCell.Tab.0.center" timestamp="1590490943588">
+    <state width="1865" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.0.center" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="324" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590490943588" />
-    <state width="1865" height="324" key="GridCell.Tab.0.left" timestamp="1590490943588">
+    <state width="1865" height="244" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.0.left" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="324" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590490943588" />
-    <state width="1865" height="324" key="GridCell.Tab.0.right" timestamp="1590490943589">
+    <state width="1865" height="244" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.0.right" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1865" height="324" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590490943589" />
-    <state width="1848" height="242" key="GridCell.Tab.1.bottom" timestamp="1590434647830">
+    <state width="1865" height="244" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.1.bottom" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1848" height="242" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
-    <state width="1848" height="242" key="GridCell.Tab.1.center" timestamp="1590434647830">
+    <state width="1865" height="244" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.1.center" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1848" height="242" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
-    <state width="1848" height="242" key="GridCell.Tab.1.left" timestamp="1590434647830">
+    <state width="1865" height="244" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.1.left" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1848" height="242" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
-    <state width="1848" height="242" key="GridCell.Tab.1.right" timestamp="1590434647830">
+    <state width="1865" height="244" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
+    <state width="1865" height="244" key="GridCell.Tab.1.right" timestamp="1590842742076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1848" height="242" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590434647830" />
+    <state width="1865" height="244" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590842742076" />
     <state x="351" y="83" key="SettingsEditor" timestamp="1590440664350">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -328,6 +344,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="452" y="193" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590280381172" />
+    <state x="835" y="382" width="365" height="298" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590837282701">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="835" y="382" width="365" height="298" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590837282701" />
     <state x="564" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590350620068">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -355,26 +375,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/login.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/login.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/loginCookie.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/loginCookie.py</url>
-          <line>135</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/post.py</url>
           <line>53</line>
           <option name="timeStamp" value="27" />
@@ -398,13 +398,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/northcyprusswinterns$Database.coverage" NAME="Database Coverage Results" MODIFIED="1590490943580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/northcyprusswinterns$Database.coverage" NAME="Database Coverage Results" MODIFIED="1590840181551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/northcyprusswinterns$cookieCreator.coverage" NAME="cookieCreator Coverage Results" MODIFIED="1590831198065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$registerAppender.coverage" NAME="registerAppender Coverage Results" MODIFIED="1590332641801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$index.coverage" NAME="index Coverage Results" MODIFIED="1590490719988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$post.coverage" NAME="post Coverage Results" MODIFIED="1590412549146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$logOut.coverage" NAME="logOut Coverage Results" MODIFIED="1590419869933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$login.coverage" NAME="login Coverage Results" MODIFIED="1590350084936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/northcyprusswinterns$register.coverage" NAME="register Coverage Results" MODIFIED="1590431658360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/northcyprusswinterns$loginCookie.coverage" NAME="loginCookie Coverage Results" MODIFIED="1590429484743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/northcyprusswinterns$loginCookie.coverage" NAME="loginCookie Coverage Results" MODIFIED="1590839906048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

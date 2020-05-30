@@ -87,8 +87,6 @@ input {
 	width: 100%;
 }
 
-
-
 .form-container {
 	background-color: white;
 	position: relative;
@@ -103,7 +101,8 @@ input {
 
 .table-wrapper{
     margin: 10px 70px 70px;
-    box-shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+	shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
 }
 
 .fl-table {
@@ -157,8 +156,3 @@ input {
   color:#ccc;
 }
 
-.table-wrapper{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-	shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
-}

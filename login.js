@@ -10,16 +10,6 @@ signInButtonOverlay.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
 
-function runPythonforAuthentication(){
-	alert('python script');
-	$.ajax({
-		url: "login.py",
-		dataType: "py",
-	   	context: document.body
-	  	}).done(function(){
-	   alert('finished python script');;
-	  });
-	
-}
+
 
 

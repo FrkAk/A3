@@ -15,7 +15,7 @@ htmlWrong = """
         </head>
     <body>
          <h2>Post Error</h2>
-         <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Return Sign In Page</button>
+         <button type = "button" onclick = "window.location.href='loginCookie.py'" >Back</button>
     </body>
 </html>
 """
@@ -33,14 +33,14 @@ htmlUser = """
        <h3>Expectation: {internshipliste[2]}</h3>
        <h3>Deadline: {internshipliste[3]}</h3>
        <h3>Username: {internshipliste[4]}</h3>
-       <button type = "button" <a onclick = "window.location.href='index.py'">Back</a></button>
+       <button type = "button" <a onclick = "window.location.href='loginCookie.py'">Back</a></button>
        </body>
    </html>
 """
 cUser=""
 if "HTTP_COOKIE" in os.environ:
     cookies = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
-    cUser = cookies["username"].value
+    cUser = str(db.getSessionUsername(cookies["sessionID"].value))
 
 else:
     print(htmlWrong)

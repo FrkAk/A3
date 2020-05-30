@@ -12,132 +12,158 @@
     <collation id="5" parent="1" name="RTRIM"/>
     <table id="6" parent="2" name="CITY"/>
     <table id="7" parent="2" name="INTERNSHIPPOSITION"/>
-    <table id="8" parent="2" name="SOFTWARECOMPANY"/>
-    <table id="9" parent="2" name="sqlite_master">
+    <table id="8" parent="2" name="LOG"/>
+    <table id="9" parent="2" name="SOFTWARECOMPANY"/>
+    <table id="10" parent="2" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="10" parent="6" name="citycode">
+    <column id="11" parent="6" name="citycode">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="11" parent="6" name="cityname">
+    <column id="12" parent="6" name="cityname">
       <Position>2</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="12" parent="6">
+    <key id="13" parent="6">
       <ColNames>citycode</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="13" parent="7" name="id">
+    <column id="14" parent="7" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="14" parent="7" name="internshipname">
+    <column id="15" parent="7" name="internshipname">
       <Position>2</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="7" name="details">
+    <column id="16" parent="7" name="details">
       <Position>3</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="7" name="expectations">
+    <column id="17" parent="7" name="expectations">
       <Position>4</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="7" name="deadline">
+    <column id="18" parent="7" name="deadline">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="7" name="companyusername">
+    <column id="19" parent="7" name="companyusername">
       <Position>6</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="19" parent="7">
+    <key id="20" parent="7">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="20" parent="7">
+    <foreign-key id="21" parent="7">
       <ColNames>companyusername</ColNames>
       <RefTableName>SOFTWARECOMPANY</RefTableName>
       <RefColNames>username</RefColNames>
     </foreign-key>
-    <column id="21" parent="8" name="username">
+    <column id="22" parent="8" name="sessionID">
       <Position>1</Position>
       <DataType>TEXT|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="8" name="pwd">
+    <column id="23" parent="8" name="username">
       <Position>2</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="8" name="website">
+    <column id="24" parent="8" name="status">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="25" parent="8" name="sqlite_autoindex_LOG_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sessionID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="8">
+      <ColNames>sessionID</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_LOG_1</UnderlyingIndexName>
+    </key>
+    <column id="27" parent="9" name="username">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="pwd">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="website">
       <Position>3</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="8" name="companyname">
+    <column id="30" parent="9" name="companyname">
       <Position>4</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="8" name="email">
+    <column id="31" parent="9" name="email">
       <Position>5</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="8" name="telephone">
+    <column id="32" parent="9" name="telephone">
       <Position>6</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="27" parent="8" name="address">
+    <column id="33" parent="9" name="address">
       <Position>7</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="8" name="citycode">
+    <column id="34" parent="9" name="citycode">
       <Position>8</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <index id="29" parent="8" name="sqlite_autoindex_SOFTWARECOMPANY_1">
+    <index id="35" parent="9" name="sqlite_autoindex_SOFTWARECOMPANY_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="8">
+    <key id="36" parent="9">
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_SOFTWARECOMPANY_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="31" parent="8">
+    <foreign-key id="37" parent="9">
       <ColNames>citycode</ColNames>
       <RefTableName>CITY</RefTableName>
       <RefColNames>citycode</RefColNames>
     </foreign-key>
-    <column id="32" parent="9" name="type">
+    <column id="38" parent="10" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="33" parent="9" name="name">
+    <column id="39" parent="10" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="34" parent="9" name="tbl_name">
+    <column id="40" parent="10" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="35" parent="9" name="rootpage">
+    <column id="41" parent="10" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="36" parent="9" name="sql">
+    <column id="42" parent="10" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>

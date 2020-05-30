@@ -1,6 +1,8 @@
 #! C:\Program Files (x86)\Python38-32\python
 import cgi
+import http.cookies as Cookie
 from Database import Database as db
+import os
 
 htmlSignInUP = """
 <html>
@@ -34,7 +36,7 @@ htmlSignInUP = """
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form  action="loginCookie.py" method="post">
+                <form  action="cookieCreator.py" method="post">
                     <h1>Sign in</h1>
                     <span>use your account</span>
                     <input type="text" placeholder="Username" name="username"/>
@@ -66,3 +68,7 @@ htmlSignInUP = """
 
 
 print(htmlSignInUP)
+if "HTTP_COOKIE" in os.environ:
+    cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
+    cUser = db.getSessionUsername(cookie["sessionID"].value)
+    db.updateLogStatus(cookie["sessionID"].value,-1)
