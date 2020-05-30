@@ -1,4 +1,9 @@
 #! C:\Program Files (x86)\Python38-32\python
+#Furkan Akbulutlar 2328409
+#Ege Seçkin 2152155
+#Zeynep İrem Norgaz 2152114
+
+
 import cgi
 from Database import Database as db
 
