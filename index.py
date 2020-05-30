@@ -21,11 +21,12 @@ htmlHeader = """
         <div class="form-group pull-right">
             <input type="text" id="myInput" onkeyup="searchFromTables()" placeholder="What you looking for...">
         </div>    
-        <button type = "button" onclick = "window.location.href='signInUpPage.py'" > Sign In/Sign Up </button>
+        <button type = "button" onclick = "window.location.href='signUp.py'" > Sign Up </button><br>
+        <button type = "button" onclick = "window.location.href='signIn.py'" > Sign In </button>
  """
 htmltable = """
-        <div class = "table-wrapper">
-            <table id="{tableID}" class= "myTable" >
+        <div class = "tableBox">
+            <table id="{tableID}" class= "tableVisual" >
             <tbody>
                 <tr>
                     <th>{cityname}</th>

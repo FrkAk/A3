@@ -33,7 +33,7 @@ htmlHeader = """
 htmlWrong = """
     <h3 style="align: center">Wrong Username or Password</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 htmlSucces = """

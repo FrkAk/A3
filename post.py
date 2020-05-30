@@ -28,7 +28,7 @@ htmlCookie = """
         </head>
     <body>
          <h2>Login Required - Error Code: 121</h2>
-         <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Back</button>
+         <button type = "button" onclick = "window.location.href='signIn.py'" >Back</button>
     </body>
 </html>
 """

@@ -88,6 +88,17 @@ input {
 	width: 100%;
 }
 
+select{
+	margin: 6px 0;
+	background-color: #eeeeee;
+  	color: #757575;
+  	padding: 12px;
+  	width: 285px;
+  	border: none;
+  	font-size: 14px;
+  	outline: none;
+}
+
 .form-container {
 	background-color: white;
 	position: relative;
@@ -100,14 +111,13 @@ input {
 	transition: all 0.6s ease-in-out;
 }
 
-.table-wrapper{
+.tableBox{
 	margin: 10px 70px 70px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 	shadow: 0px 35px 40px rgba( 0, 0, 0, 0.2 );
 }
 
-.myTable {
-
+.tableVisual {
     border-radius: 5px;
     font-size: 14px;
     font-weight: normal;
@@ -120,17 +130,17 @@ input {
 
 }
 
-.myTable td, .myTable th {
+.tableVisual td, .tableVisual th {
     text-align: center;
     padding: 8px;
 }
 
-.myTable td {
+.tableVisual td {
     border-right: 1px solid #f8f8f8;
     font-size: 12px;
 }
 
-.myTable th {
+.tableVisual th {
     color: #ffffff;
     background: #0ae594;
 }
@@ -145,12 +155,12 @@ input {
 }
 
 
-.myTable th:nth-child(odd) {
+.tableVisual th:nth-child(odd) {
     color: #ffffff;
     background: #0ae594;
 }
 
-.myTable tr:nth-child(even) {
+.tableVisual tr:nth-child(even) {
     background: #F8F8F8;
 }
 

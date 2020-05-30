@@ -12,7 +12,9 @@ htmlRedirectIndex = """
 
     <body>
     <h3>Successfully Registered</h3>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Home Page </button>
+    <button type = "button" onclick = "window.location.href='signIn.py'" >Sign In Now</button>
+    <button type = "button" style= "position: absolute; top: 30px; right: 25px;" 
+    onclick = "window.location.href='index.py'" >Home Page</button>
     </body>
 </html>
 
@@ -27,7 +29,7 @@ htmlRedirectIndexWithError = """
     <body>
     <h2>Register Error</h2>
     <h3>Please Check Your Value</h3>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'" >Back</button>
+    <button type = "button" onclick = "window.location.href='signUp.py'" >Back</button>
     </body>
 </html>
 

@@ -18,45 +18,45 @@ htmlHeader = """
 htmlWrong = """
     <h3 style="align: center">Wrong Username or Password</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 htmlSessionError = """
     <h3 style="align: center">Session Error - Error Code: 118</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 htmlSessionUserError = """
     <h3 style="align: center">Session User Error  - Error Code: 119</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 htmlLoginError = """
     <h3 style="align: center">Login Required  - Error Code: 120</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page</button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 
 htmlCookieError = """
     <h3 style="align: center">Login Required - Error Code: 121</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 htmlKeyError = """
     <h3 style="align: center">Key Error - Error Code: 122</h3>
     <button type = "button" onclick = "window.location.href='index.py'" >Home Page </button><br>
-    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Back</button>
+    <button type = "button" onclick = "window.location.href='signIn.py'">Back</button>
 """
 
 
 
 htmlNewPosition = """
     <h2>Post your Job</h2>
-            <div class="form-container table-wrapper">
+            <div class="form-container tableBox">
                 <form action="post.py" method="post">
                     <h2>Create a Job Position</h2>
                     <span>Fill the blanks</span>
@@ -65,15 +65,15 @@ htmlNewPosition = """
                     <input type="text" placeholder="Expectation" name="expectation"/>
                     <input type="date" placeholder="Deadline" name="deadline"/>
                     <button type = "submit" id="post">Post</button><br>
-                    <button type = "button" onclick = "window.location.href='signInUpPage.py'">Log Out</button>
+                    <button type = "button" onclick = "window.location.href='index.py'">Log Out</button>
                 </form>
         </div>
 """
 
 htmltable = """
-        <br><br><div class="table-wrapper">
+        <br><br><div class="tableBox">
             <span class="counter pull-right"></span>
-            <table class="myTable">
+            <table class="tableVisual">
                 <thead>
                 <tr>
                     <th>{userCapital}</th>

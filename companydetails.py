@@ -18,8 +18,8 @@ htmlheader = """
     <body>
     <h1>Company Details</h1>
     
-    <div class="table-wrapper">
-        <table id="{tableID}" class="myTable">
+    <div class="tableBox">
+        <table id="{tableID}" class="tableVisual">
         <tbody>
             <tr class="header">
               <th>Software Company</th>
