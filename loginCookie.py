@@ -99,7 +99,7 @@ htmlrow = """
 
 htmlEmpty= """
                 <tr> 
-                    <th>There is no offer</th  >
+                    <td>No internship position available at the moment</td>
                 </tr>
 """
 htmltableEnd= """

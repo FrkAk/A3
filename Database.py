@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import date
 
 
 class Database():
@@ -11,13 +12,17 @@ class Database():
     def getinternshippositions():
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
-
+        today = date.today()
         internshipdetail = c.execute("SELECT SOFTWARECOMPANY.companyname, INTERNSHIPPOSITION.* ,SOFTWARECOMPANY.citycode "
                                      "FROM INTERNSHIPPOSITION "
                                      "INNER JOIN SOFTWARECOMPANY ON SOFTWARECOMPANY.username = INTERNSHIPPOSITION.companyusername "
-                                     "ORDER BY  deadline DESC")
+                                     "WHERE INTERNSHIPPOSITION.deadline >= ?"
+                                     "ORDER BY  deadline DESC", (today,))
 
         internships = internshipdetail.fetchall()
+
+
+
 
         conn.commit()
         conn.close()

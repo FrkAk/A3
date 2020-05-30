@@ -16,6 +16,7 @@ body {
 h1 {
 	font-weight: bold;
 	margin: 0;
+	color: #11b763;
 }
 
 h2 {
@@ -135,10 +136,12 @@ input {
 }
 
 .myTableHeader{
-	color: #ffffff;
-    background: #0ae594;
+	color: #000000;
 	font-size: 14px;
+    background: #0ae594;
 	font-weight: bold;
+	text-decoration: none;
+	margin: 15px 0;
 }
 
 

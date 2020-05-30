@@ -37,8 +37,9 @@ htmlWrong = """
 """
 
 htmlSucces = """
-    <h3 style="align: center">Login Successful</h3>
-    <button type = "button" onclick = "window.location.href='loginCookie.py'" >Post a New Job</button><br>
+    <script type="text/javascript">
+        window.location = "http://localhost/northcyprusswinterns/loginCookie.py";
+    </script>
 """
 
 
